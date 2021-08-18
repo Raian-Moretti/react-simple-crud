@@ -1,15 +1,16 @@
-import { createContext } from 'jest-runtime';
-import React, { CreateContext, useReducer } from 'react';
+import React, { createContext, useReducer } from 'react';
 
-import Reducer from './context';
+import Reducer from './Reducer';
 
 const InitState = {
-    user: [
+    users: [
         {
-            id: 0
+            id: 1,
+            name: "Raian",
+            role: "Dev" 
         }
     ]
-}
+};
 
 export const Context = createContext(InitState);
 
@@ -46,7 +47,7 @@ export const Provider = ({ children }) => {
     return(
         <Context.Provider
             value = {{
-                user: state.user,
+                users: state.users,
                 createUser,
                 //readUser
                 updateUser,

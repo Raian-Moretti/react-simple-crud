@@ -3,9 +3,9 @@ export default function Reducer(state, action){
         case "CREATE_USER": // Pega o valor do payload com o novo usuário e retorna o state atualizado
             return {
                 ...state,
-                user: [...state.user, action.payload],
+                users: [...state.user, action.payload],
             };
-        case "READ_USER":
+        //case "READ_USER":
 
         case "UPDATE_USER": // Pega o valor do payload e compara com o ID do usuário, se encontrar na lista de atualizados, retorna o usuário atualizado
             const updatedUser = action.payload;
@@ -19,13 +19,13 @@ export default function Reducer(state, action){
 
             return {
                 ...state,
-                user: updatedUsers,
+                users: updatedUsers,
             };
 
         case "DELETE_USER": // Pega o valor do payload e compara com o ID do usuário, se encontrar remove o usário e retorna o state atualizado
             return {
                 ...state,
-                user: state.user.filer((user) => user.id !== action.payload),
+                users: state.user.filer((user) => user.id !== action.payload),
             };
 
         default:
