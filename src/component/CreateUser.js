@@ -24,12 +24,12 @@ export const CreateUser = () => {
     };
     return (
         <React.Fragment>
-            <div className="A">
+            <div className="Main User">
                 <form onSubmit={onSubmit}>
                     <label>
                         User
                     </label>
-                    <input className="Input" 
+                    <input className="Input User A" 
                             value={name} 
                             onChange={(e) => setName(e.target.value)} 
                             type="text" 
@@ -37,11 +37,11 @@ export const CreateUser = () => {
                     <label>
                         Role
                     </label>
-                    <input className="Input" 
+                    <input className="Input Role A" 
                             value={role} onChange={(e) => setRole(e.target.value)} 
                             type="text" 
                             placeholder="Insert Role"/>
-                    <div className="CreateUser">
+                    <div className="Create User">
                         <button className="AddButton">
                             Add User
                         </button>
