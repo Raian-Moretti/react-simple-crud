@@ -4,9 +4,16 @@ import './App.css';
 import { Provider } from './context/States';
 
 import { Homepage } from './component/Homepage';
-import { CreateUser } from './component/CreateUser';
+import { CreateUser, } from './component/CreateUser';
 import { EditUser } from './component/EditUser';
 
+
+fetch('http://localhost:3001/posts/')
+ .then(response => response.json())
+ .catch(error => console.error('Error:', error))
+ .then(response => console.log('Success:', JSON.stringify(response)));  
+   
+   
 function App() {
 	return (
 		<Provider>

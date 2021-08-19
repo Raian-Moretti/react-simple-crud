@@ -5,6 +5,13 @@ import { Context } from '../context/States';
 
 export const UserList = () => {
     const { users, updateUser, deleteUser } = useContext(Context);
+
+    const onDelete = (id) => {
+        fetch('http://localhost:3001/posts/' + id, {
+            method: "DELETE"
+        });
+        deleteUser(id);
+        };
     return (
         <React.Fragment>
             {users.length > 0 ? (
@@ -29,7 +36,7 @@ export const UserList = () => {
                                     </button>
                                 </Link>
                                 <button className="Button Danger"
-                                    onClick={() => deleteUser(user.id)}
+                                    onClick={() => onDelete(user.id)}
                                     title="Delete User">
                                     Delete
                                 </button>
@@ -38,7 +45,7 @@ export const UserList = () => {
                     )}
                 </React.Fragment>
             ) : (
-                <p>SALVEEE</p>
+                <p>Empty List</p>
             )}
         </React.Fragment>
     );

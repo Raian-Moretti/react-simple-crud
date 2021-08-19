@@ -6,7 +6,6 @@ import { Context } from '../context/States';
 export const CreateUser = () => {
     let userHist = useHistory();
 
-
     const { createUser, users } = useContext(Context);
 
     const [name, setName] = useState("");
@@ -21,15 +20,26 @@ export const CreateUser = () => {
         };
         createUser(newUser);
         userHist.push("/");
+
+        fetch('http://localhost:3001/posts/', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newUser),
+        })
+            .then(response => response.json())
+            .catch(error => console.error('Error:', error))
+            .then(response => console.log('Success:', JSON.stringify(response)));
     };
     return (
         <React.Fragment>
-            <div className="Main User">
+            <div>
                 <form onSubmit={onSubmit}>
                     <label>
                         User
                     </label>
-                    <input className="Input User A"
+                    <input
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         type="text"
@@ -37,7 +47,7 @@ export const CreateUser = () => {
                     <label>
                         Role
                     </label>
-                    <input className="Input Role A"
+                    <input
                         value={role} onChange={(e) => setRole(e.target.value)}
                         type="text"
                         placeholder="Insert Role" />

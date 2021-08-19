@@ -29,6 +29,17 @@ export const EditUser = (route) => {
         e.preventDefault();
         updateUser(selectedUser);
         userHist.push("/");
+
+        fetch('http://localhost:3001/posts/'+ selectedUser.id, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(selectedUser),
+        })
+            .then(response => response.json())
+            .catch(error => console.error('Error:', error))
+            .then(response => console.log('Success:', JSON.stringify(response)));
     };
 
     const handleOnChange = (userKey, newValue) =>
