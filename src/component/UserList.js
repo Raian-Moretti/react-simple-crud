@@ -9,34 +9,34 @@ export const UserList = () => {
         <React.Fragment>
             {users.length > 0 ? (
                 <React.Fragment>
-                   {users.map((user) =>
-                   <div ClassName="UserID"
-                        key={user.id}>
-                        <div ClassName="UserName">
-                        <p>
-                            {user.name}
-                        </p>
-                        <p>
-                            {user.role}
-                        </p>
-                        </div>
-                        <div className="EditUser">
-                            <Link to={`/edit/${user.id}`}  title="Edit User">
-                                <button
-                                onClick={() => updateUser(user.id)}
-                                title="Edit User">
-                                    Edit
-                                </button>
-                            </Link>
-                            <button
-                                onClick={() => deleteUser(user.id)}
-                                title="Delete User">
+                    {users.map((user) =>
+                        <div className="Field"
+                            key={user.id}>
+                            <div>
+                                <span>
+                                    {user.name}
+                                </span>
+                                <p style={{ fontSize: 14, margin: 0, padding: 0, color: "#616161" }}>
+                                    {user.role}
+                                </p>
+                            </div>
+                            <div style={{ display: 'flex', gap: 10 }}>
+                                <Link to={`/edit/${user.id}`} title="Edit User">
+                                    <button className="Button Warning"
+                                        onClick={() => updateUser(user.id)}
+                                        title="Edit User">
+                                        Edit
+                                    </button>
+                                </Link>
+                                <button className="Button Danger"
+                                    onClick={() => deleteUser(user.id)}
+                                    title="Delete User">
                                     Delete
-                            </button>
+                                </button>
+                            </div>
                         </div>
-                   </div>
-                   )}          
-                </React.Fragment> 
+                    )}
+                </React.Fragment>
             ) : (
                 <p>SALVEEE</p>
             )}

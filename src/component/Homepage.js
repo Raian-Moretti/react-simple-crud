@@ -5,12 +5,12 @@ import { UserList } from './UserList'
 export const Homepage = () => {
     return (
         <React.Fragment>
-            <div>
-                <h3>
-                React Simple CRUD
+            <div className="homepage-container">
+                <h3 className="Header">
+                    React Simple CRUD
                 </h3>
-                <Page/>
-                <UserList/>
+                <Page />
+                <UserList />
             </div>
         </React.Fragment>
     );

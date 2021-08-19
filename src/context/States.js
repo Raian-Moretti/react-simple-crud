@@ -7,7 +7,7 @@ const InitState = {
         {
             id: 1,
             name: "Raian",
-            role: "Dev" 
+            role: "Dev"
         }
     ]
 };
@@ -44,9 +44,9 @@ export const Provider = ({ children }) => {
             payload: id
         });
     }
-    return(
+    return (
         <Context.Provider
-            value = {{
+            value={{
                 users: state.users,
                 createUser,
                 //readUser

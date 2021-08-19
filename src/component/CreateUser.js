@@ -29,18 +29,18 @@ export const CreateUser = () => {
                     <label>
                         User
                     </label>
-                    <input className="Input User A" 
-                            value={name} 
-                            onChange={(e) => setName(e.target.value)} 
-                            type="text" 
-                            placeholder="Insert Name"/>
+                    <input className="Input User A"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        type="text"
+                        placeholder="Insert Name" />
                     <label>
                         Role
                     </label>
-                    <input className="Input Role A" 
-                            value={role} onChange={(e) => setRole(e.target.value)} 
-                            type="text" 
-                            placeholder="Insert Role"/>
+                    <input className="Input Role A"
+                        value={role} onChange={(e) => setRole(e.target.value)}
+                        type="text"
+                        placeholder="Insert Role" />
                     <div className="Create User">
                         <button className="AddButton">
                             Add User

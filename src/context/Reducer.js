@@ -1,5 +1,5 @@
-export default function Reducer(state, action){
-    switch(action.type){
+export default function Reducer(state, action) {
+    switch (action.type) {
         case "CREATE_USER": // Pega o valor do payload com o novo usuário e retorna o state atualizado
             return {
                 ...state,
@@ -29,6 +29,6 @@ export default function Reducer(state, action){
             };
 
         default:
-                return state;
+            return state;
     }
 }

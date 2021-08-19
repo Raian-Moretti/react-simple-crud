@@ -7,12 +7,12 @@ export const EditUser = (route) => {
     let userHist = useHistory();
 
 
-    const { editUser, users } = useContext(Context);
+    const { users, updateUser } = useContext(Context);
 
     const [selectedUser, setSelectedUser] = useState({
         id: null,
         name: "",
-        role: "" 
+        role: ""
     });
 
     const currentUserId = route.match.params.id;
@@ -24,44 +24,44 @@ export const EditUser = (route) => {
         );
         setSelectedUser(selectedUser);
     }, [currentUserId, users]);
-    
+
     const onSubmit = (e) => {
         e.preventDefault();
-        editUser(selectedUser);
+        updateUser(selectedUser);
         userHist.push("/");
     };
 
     const handleOnChange = (userKey, newValue) =>
-        setSelectedUser({...selectedUser, [userKey]: newValue});
+        setSelectedUser({ ...selectedUser, [userKey]: newValue });
 
-    if(!selectedUser || !selectedUser.id){
+    if (!selectedUser || !selectedUser.id) {
         return <div> Invalid ID </div>
     }
     return (
         <React.Fragment>
-            <div className="Sub User">
+            <div>
                 <form onSubmit={onSubmit}>
                     <label>
                         User
                     </label>
-                    <input className="Input User B" 
-                            value={selectedUser.name} 
-                            onChange={(e) => handleOnChange("name", e.target.value)} 
-                            type="text" 
-                            placeholder="Update Name"/>
+                    <input
+                        value={selectedUser.name}
+                        onChange={(e) => handleOnChange("name", e.target.value)}
+                        type="text"
+                        placeholder="Update Name" />
                     <label>
                         Role
                     </label>
-                    <input className="Input Role B" 
-                            value={selectedUser.role} onChange={(e) => handleOnChange("name", e.target.value)} 
-                            type="text" 
-                            placeholder="Update Role"/>
-                    <div className="Edit User">
-                        <button className="EditButton">
+                    <input
+                        value={selectedUser.role} onChange={(e) => handleOnChange("role", e.target.value)}
+                        type="text"
+                        placeholder="Update Role" />
+                    <div>
+                        <button>
                             Edit User
                         </button>
                     </div>
-                    <div className="Cancel">
+                    <div>
                         <Link to="/">Cancel</Link>
                     </div>
                 </form>

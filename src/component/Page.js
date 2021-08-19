@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom'
 export const Page = () => {
     return (
         <div>
-            <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                 <h5>
                     User List
                 </h5>
-            </div>
-            <div>
-                <Link to="/add">
-                    <button title="Add User">
-                        <span> Add User </span>
-                    </button>
-                </Link>
+                <div className="AddButton">
+                    <Link to="/add">
+                        <button className="Button Success">
+                            <span> Add User </span>
+                        </button>
+                    </Link>
+                </div>
             </div>
         </div>
     )

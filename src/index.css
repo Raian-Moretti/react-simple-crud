@@ -1,4 +1,6 @@
 body {
+  background-color: grey;
+  padding: 16px;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +12,63 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.homepage-container {
+  padding: 16px;
+  border-radius: 20px;
+  min-height: 90vh;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: white;
+}
+.Header {
+  text-align: center;
+} 
+
+.Button {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  padding: 8px;
+  border: none;
+  min-width: 50px;
+  border-radius: 50px;
+}
+
+.Field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  background-color: #EEE; 
+  padding: 8px;
+  border-radius: 5px; 
+  margin-top:5px;
+  margin-bottom: 5px;
+  transition: background-color 2s;
+}
+
+.Field:hover{
+  filter:brightness(0.8);
+}
+
+.Button:hover {
+  filter:brightness(0.8);
+}
+
+.Button:active {
+  filter:brightness(0.5);
+}
+
+.Danger {
+  background-color: #EB5348;
+}
+
+.Success {
+  background-color: #3FE081;
+}
+
+.Warning {
+  background-color:#3C34E6;
 }
