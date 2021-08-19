@@ -6,12 +6,12 @@ export const Page = () => {
         <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                 <h5>
-                    User List
+                    Title List
                 </h5>
-                <div className="AddButton">
+                <div className="add-button">
                     <Link to="/add">
-                        <button className="Button Success">
-                            <span> Add User </span>
+                        <button className="button success">
+                            <span> Add Title </span>
                         </button>
                     </Link>
                 </div>

@@ -1,31 +1,35 @@
 export default function Reducer(state, action) {
     switch (action.type) {
-        case "CREATE_USER": // Pega o valor do payload com o novo usuário e retorna o state atualizado
+        case "SET_TITLE": // Pega o valor do payload com o novo usuário e retorna o state atualizado
             return {
                 ...state,
-                users: [...state.users, action.payload],
+                titles: action.payload,
             };
-        //case "READ_USER":
+        case "CREATE_TITLE": // Pega o valor do payload com o novo usuário e retorna o state atualizado
+            return {
+                ...state,
+                titles: [...state.titles, action.payload],
+            };
+            
+        case "UPDATE_TITLE": // Pega o valor do payload e compara com o ID do usuário, se encontrar na lista de atualizados, retorna o usuário atualizado
+            const updatedTitle = action.payload;
 
-        case "UPDATE_USER": // Pega o valor do payload e compara com o ID do usuário, se encontrar na lista de atualizados, retorna o usuário atualizado
-            const updatedUser = action.payload;
-
-            const updatedUsers = state.users.map((user) => {
-                if (user.id === updatedUser.id) {
-                    return updatedUser;
+            const updatedTitles = state.titles.map((title) => {
+                if (title.id === updatedTitle.id) {
+                    return updatedTitle;
                 }
-                return user;
+                return title;
             });
 
             return {
                 ...state,
-                users: updatedUsers,
+                titles: updatedTitles,
             };
 
-        case "DELETE_USER": // Pega o valor do payload e compara com o ID do usuário, se encontrar remove o usário e retorna o state atualizado
+        case "DELETE_TITLE": // Pega o valor do payload e compara com o ID do usuário, se encontrar remove o usário e retorna o state atualizado
             return {
                 ...state,
-                users: state.users.filter((user) => user.id !== action.payload),
+                titles: state.titles.filter((title) => title.id !== action.payload),
             };
 
         default:

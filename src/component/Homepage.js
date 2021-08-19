@@ -1,16 +1,17 @@
 import React from 'react';
 import { Page } from './Page'
-import { UserList } from './UserList'
+import { TitleList } from './TitleList'
 
 export const Homepage = () => {
+   
     return (
         <React.Fragment>
             <div className="homepage-container">
-                <h3 className="Header">
+                <h3 className="header">
                     React Simple CRUD
                 </h3>
                 <Page />
-                <UserList />
+                <TitleList />
             </div>
         </React.Fragment>
     );

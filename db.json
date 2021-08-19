@@ -1,3 +1,11 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "id": 1,
+      "title": "Gayzão",
+      "description": "Garoto Gay",
+      "date": "1999-08-04",
+      "category": "Paper"
+    }
+  ]
 }

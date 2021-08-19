@@ -22,11 +22,11 @@ code {
   margin: 0 auto;
   background-color: white;
 }
-.Header {
+.header {
   text-align: center;
 } 
 
-.Button {
+.button {
   display: inline-block;
   text-decoration: none;
   color: white;
@@ -37,7 +37,7 @@ code {
   border-radius: 50px;
 }
 
-.Field {
+.field {
   display: flex;
   align-items: center;
   justify-content: space-between; 
@@ -49,26 +49,66 @@ code {
   transition: background-color 2s;
 }
 
-.Field:hover{
+.field:hover{
   filter:brightness(0.8);
 }
 
-.Button:hover {
+.button:hover {
   filter:brightness(0.8);
 }
 
-.Button:active {
+.button:active {
   filter:brightness(0.5);
 }
 
-.Danger {
+.danger {
   background-color: #EB5348;
 }
 
-.Success {
+.success {
   background-color: #3FE081;
 }
 
-.Warning {
+.edit {
   background-color:#3C34E6;
+}
+
+.loader{
+  width: 100%;
+  height: 300px;
+  padding:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.loader-circle{
+  width:15px;
+  height:15px;
+  background-color:grey;
+  margin:1.5px;
+  border-radius:50px;
+  animation:fade 0.8s alternate infinite;
+}
+
+.loader-circle:nth-of-type(2){
+  animation-delay:0.25s;
+}
+
+.loader-circle:nth-of-type(3){
+  animation-delay:0.5s;
+}
+
+.loader-circle:nth-of-type(4){
+  animation-delay:0.75s;
+}
+
+.loader-circle:nth-of-type(5){
+  animation-delay:1s;
+}
+
+@keyframes fade{
+  0%{opacity:0;}
+  50%{opacity:0;}
+  100%{opacity:1;}
 }

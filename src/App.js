@@ -4,24 +4,17 @@ import './App.css';
 import { Provider } from './context/States';
 
 import { Homepage } from './component/Homepage';
-import { CreateUser, } from './component/CreateUser';
-import { EditUser } from './component/EditUser';
-
-
-fetch('http://localhost:3001/posts/')
- .then(response => response.json())
- .catch(error => console.error('Error:', error))
- .then(response => console.log('Success:', JSON.stringify(response)));  
-   
+import { CreateTitle, } from './component/CreateTitle';
+import { EditTitle } from './component/EditTitle';   
    
 function App() {
 	return (
 		<Provider>
-			<div className="CRUD">
+			<div>
 				<Switch>
 					<Route path="/" component={Homepage} exact />
-					<Route path="/add" component={CreateUser} exact />
-					<Route path="/edit/:id" component={EditUser} exact />
+					<Route path="/add" component={CreateTitle} exact />
+					<Route path="/edit/:id" component={EditTitle} exact />
 				</Switch>
 			</div>
 

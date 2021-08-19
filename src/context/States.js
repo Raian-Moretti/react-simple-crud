@@ -1,14 +1,9 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, useEffect, useState } from 'react';
 
 import Reducer from './Reducer';
 
 const InitState = {
-    users: [
-        {
-            id: 1,
-            name: "Raian",
-            role: "Dev"
-        }
+    titles: [
     ]
 };
 
@@ -16,42 +11,49 @@ export const Context = createContext(InitState);
 
 export const Provider = ({ children }) => {
     const [state, dispatch] = useReducer(Reducer, InitState);
+    const [loading, setLoading] = useState(true);
 
-    function createUser(user) {
+    function setTitles(titles) {
         dispatch({
-            type: "CREATE_USER",
-            payload: user
+            type:"SET_TITLE",
+            payload: titles
         });
     }
-    /*
-    function readUser(user) {
+    function createTitle(title) {
         dispatch({
-            type: "READ_USER",
-            payload: user
-        });
-    }*/
-
-    function updateUser(user) {
-        dispatch({
-            type: "UPDATE_USER",
-            payload: user
+            type: "CREATE_TITLE",
+            payload: title
         });
     }
 
-    function deleteUser(id) {
+    function updateTitle(title) {
         dispatch({
-            type: "DELETE_USER",
+            type: "UPDATE_TITLE",
+            payload: title
+        });
+    }
+
+    function deleteTitle(id) {
+        dispatch({
+            type: "DELETE_TITLE",
             payload: id
         });
     }
+    useEffect(() => {
+        fetch('http://localhost:3001/posts/')
+            .then(response => response.json())
+            .catch(error => console.error('Error:', error))
+            .then(setTitles)
+            .then(() => setLoading(false));
+    }, []);
     return (
         <Context.Provider
             value={{
-                users: state.users,
-                createUser,
-                //readUser
-                updateUser,
-                deleteUser
+                titles: state.titles,
+                loading,
+                createTitle,
+                updateTitle,
+                deleteTitle
             }}
         >
             {children}
