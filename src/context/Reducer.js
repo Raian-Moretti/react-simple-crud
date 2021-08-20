@@ -10,7 +10,7 @@ export default function Reducer(state, action) {
                 ...state,
                 titles: [...state.titles, action.payload],
             };
-            
+
         case "UPDATE_TITLE": // Pega o valor do payload e compara com o ID do usuário, se encontrar na lista de atualizados, retorna o usuário atualizado
             const updatedTitle = action.payload;
 

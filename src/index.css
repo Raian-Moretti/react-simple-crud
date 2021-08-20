@@ -1,10 +1,8 @@
 body {
+  font-family: 'Arvo', serif;
   background-color: grey;
   padding: 16px;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -14,7 +12,17 @@ code {
     monospace;
 }
 
-.homepage-container {
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url(https://icons.iconarchive.com/icons/paomedia/small-n-flat/24/calendar-icon.png) no-repeat;
+  width: 20px;
+  height: 20px;
+  border-width: thin;
+}
+
+.main-container {
   padding: 16px;
   border-radius: 20px;
   min-height: 90vh;
@@ -24,9 +32,24 @@ code {
 }
 .header {
   text-align: center;
-} 
+}
 
+.empty {
+  display: flex;
+  justify-content: center;
+}
+
+.list {
+  flex-direction: row;
+  flex-wrap: 'wrap';
+  font-size: 14px;
+  margin: 0px;
+  padding: 0px;
+  color: #616161;
+  padding-bottom: 5px;
+}
 .button {
+  font-family: 'Arvo', serif;
   display: inline-block;
   text-decoration: none;
   color: white;
@@ -37,7 +60,7 @@ code {
   border-radius: 50px;
 }
 
-.field {
+.background {
   display: flex;
   align-items: center;
   justify-content: space-between; 
@@ -73,6 +96,16 @@ code {
   background-color:#3C34E6;
 }
 
+.save {
+  min-width: 80px;
+  margin-left: 350px;
+  background-color: #3FE081;
+}
+.cancel {
+  margin-right: 15px;
+  min-width: 35px;
+  background-color:red;
+}
 .loader{
   width: 100%;
   height: 300px;
@@ -111,4 +144,52 @@ code {
   0%{opacity:0;}
   50%{opacity:0;}
   100%{opacity:1;}
+}
+.field-name {
+  padding-top: 16px;
+  padding-right: 15px;
+}
+
+.title {
+  padding-bottom: 15px;
+}
+
+.description {
+  vertical-align: 10%;
+  min-height: 25vh;
+  width: 500px;
+  padding-bottom: 25px;
+}
+
+.date {
+  font-family: 'Arvo', serif;
+  max-width: 150px;
+}
+
+.category {
+  min-width: 100px;
+  padding-left: 25px;
+}
+
+.selection {
+  max-width: 80px;
+}
+.field-box {
+  border-color: black;
+  box-shadow: 0.5px 0.5px black;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+
+.field-separator {
+  display: flex;
+  padding-top: 16px;
+  padding-left: 16px;
+}
+
+.datecat {
+  justify-content: center;
 }

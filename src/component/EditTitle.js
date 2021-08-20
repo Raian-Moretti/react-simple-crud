@@ -32,7 +32,7 @@ export const EditTitle = (route) => {
         updateTitle(selectedTitle);
         titleHist.push("/");
 
-        fetch('http://localhost:3001/posts/'+ selectedTitle.id, {
+        fetch('http://localhost:3001/posts/' + selectedTitle.id, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -52,37 +52,50 @@ export const EditTitle = (route) => {
     }
     return (
         <React.Fragment>
-            <div>
+            <div className="main-container">
                 <form onSubmit={onSubmit}>
-                    <label>
-                        Title
-                    </label>
-                    <input
-                        value={selectedTitle.title}
-                        onChange={(e) => handleOnChange("title", e.target.value)}
-                        type="text"
-                        placeholder="Update Name" />
-                    <label>
-                        Description
-                    </label>
-                    <input
-                        value={selectedTitle.description} onChange={(e) => handleOnChange("description", e.target.value)}
-                        type="text"
-                        placeholder="Update Description" />
-                    <label>
-                        Date
-                    </label>
-                    <input
-                        value={selectedTitle.date} onChange={(e) => handleOnChange("date", e.target.value)}
-                        type="text"
-                        placeholder="Update Date" />
-                    <label>
-                        Category
-                    </label>
-                    <select
-                        value={selectedTitle.category} onChange={(e) => handleOnChange("category", e.target.value)}
-                        type="text"
-                        placeholder="Update Category">
+                    <div className="field-separator title">
+                        <Link to="/">
+                            <button className="button cancel">X</button>
+                        </Link>
+                        <button className="button save">
+                            <span>
+                                Save
+                            </span>
+                        </button>
+                    </div>
+                    <div>
+                        <label className="field-name">
+                            Title
+                        </label>
+                        <input className="field-box"
+                            value={selectedTitle.title}
+                            onChange={(e) => handleOnChange("title", e.target.value)}
+                            type="text" />
+                    </div>
+                    <div className="field-separator">
+                        <label className="field-name">
+                            Description
+                        </label>
+                    </div>
+                    <div className="field-separator">
+                        <input className="field-box description"
+                            value={selectedTitle.description} onChange={(e) => handleOnChange("description", e.target.value)}
+                            type="text" />
+                    </div>
+                    <div className="field-separator datecat">
+                        <label className="field-name">
+                            Date
+                        </label>
+                        <input className="field-box date"
+                            value={selectedTitle.date} onChange={(e) => handleOnChange("date", e.target.value)}
+                            type="date" />
+                        <label className="field-name category">
+                            Categories
+                        </label>
+                        <select className="field-box selection"
+                            value={selectedTitle.category} onChange={(e) => handleOnChange("category", e.target.value)}
+                            type="text">
                             <option value="Article">
                                 Article
                             </option>
@@ -90,13 +103,6 @@ export const EditTitle = (route) => {
                                 Paper
                             </option>
                         </select>
-                    <div>
-                        <button>
-                            Edit Title
-                        </button>
-                    </div>
-                    <div>
-                        <Link to="/">Cancel</Link>
                     </div>
                 </form>
             </div>

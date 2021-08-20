@@ -15,7 +15,7 @@ export const Provider = ({ children }) => {
 
     function setTitles(titles) {
         dispatch({
-            type:"SET_TITLE",
+            type: "SET_TITLE",
             payload: titles
         });
     }

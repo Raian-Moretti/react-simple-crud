@@ -5,9 +5,9 @@ export const Page = () => {
     return (
         <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <h5>
+                <span>
                     Title List
-                </h5>
+                </span>
                 <div className="add-button">
                     <Link to="/add">
                         <button className="button success">

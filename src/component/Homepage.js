@@ -3,10 +3,10 @@ import { Page } from './Page'
 import { TitleList } from './TitleList'
 
 export const Homepage = () => {
-   
+
     return (
         <React.Fragment>
-            <div className="homepage-container">
+            <div className="main-container">
                 <h3 className="header">
                     React Simple CRUD
                 </h3>

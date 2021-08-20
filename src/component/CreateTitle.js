@@ -38,43 +38,57 @@ export const CreateTitle = () => {
     };
     return (
         <React.Fragment>
-            <div>
+            <div className="main-container">
                 <form onSubmit={onSubmit}>
-                    <label>
-                        Title
-                    </label>
-                    <input
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                        type="text"
-                        placeholder="Insert Title" />
-                    <label>
-                        Description
-                    </label>
-                    <input
-                        value={description} onChange={(e) => setDescription(e.target.value)}
-                        type="text"
-                        placeholder="Insert Description" />
-                    <label>
-                        Date
-                    </label>
-                    <input
-                        value={date} onChange={(e) => {
-                            setDate(e.target.value)
-                        }
-                        }
-                        type="date"
-                        placeholder="Insert Date" />
-                    <label>
-                        Categories
-                    </label>
-                    <select
-                        value={category} onChange={(e) => {
-                            console.log(e.target.value)
-                            setCategory(e.target.value)}
-                        }    
-                        type="text"
-                        placeholder="Select Category" >
+                    <div className="field-separator title">
+                        <Link to="/">
+                            <button className="button cancel">X</button>
+                        </Link>
+                        <button className="button save">
+                            <span>
+                                Create
+                            </span>
+                        </button>
+                    </div>
+                    <div>
+                        <label className="field-name">
+                            Title
+                        </label>
+                        <input className="field-box" required
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            type="text" />
+                    </div>
+                    <div className="field-separator">
+                        <label className="field-name">
+                            Description
+                        </label>
+                    </div>
+                    <div className="field-separator">
+                        <input className="field-box description" required
+                            value={description} onChange={(e) => setDescription(e.target.value)}
+                            type="text" />
+                    </div>
+                    <div className="field-separator datecat">
+                        <label className="field-name">
+                            Date
+                        </label>
+                        <input className="field-box date" required
+                            value={date} onChange={(e) => {
+                                setDate(e.target.value)
+                            }
+                            }
+                            type="date" />
+                        <label className="field-name category">
+                            Categories
+                        </label>
+                        <select className="field-box selection"
+                            value={category} onChange={(e) => {
+                                console.log(e.target.value)
+                                setCategory(e.target.value)
+                            }
+                            }
+                            type="text" >
                             <option value="Article">
                                 Article
                             </option>
@@ -82,13 +96,6 @@ export const CreateTitle = () => {
                                 Paper
                             </option>
                         </select>
-                    <div>
-                        <button>
-                            Add Title
-                        </button>
-                    </div>
-                    <div>
-                        <Link to="/">Cancel</Link>
                     </div>
                 </form>
             </div>
