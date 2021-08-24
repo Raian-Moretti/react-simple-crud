@@ -1,6 +1,6 @@
 # CRUD React Application
 
-## A utilização da biblioteca React foi devido a algumas vantagens oferecidas.
+## A utilização da biblioteca React foi devido a algumas vantagens oferecidas
 
 É veloz e eficiente, permite a reutilização de componentes já criados.
 
