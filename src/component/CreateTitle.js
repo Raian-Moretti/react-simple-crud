@@ -65,7 +65,7 @@ export const CreateTitle = () => {
                         </label>
                     </div>
                     <div className="field-separator">
-                        <input className="field-box description" required
+                        <textarea className="field-box description" required rows="10" cols="30"
                             value={description} onChange={(e) => setDescription(e.target.value)}
                             type="text" />
                     </div>

@@ -79,7 +79,7 @@ export const EditTitle = (route) => {
                         </label>
                     </div>
                     <div className="field-separator">
-                        <input className="field-box description"
+                        <textarea className="field-box description"
                             value={selectedTitle.description} onChange={(e) => handleOnChange("description", e.target.value)}
                             type="text" />
                     </div>
