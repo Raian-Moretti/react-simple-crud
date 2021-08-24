@@ -19,4 +19,4 @@ Da mesma forma como o React, o Node.js foi selecionado por maior afinidade e pre
 
 ## JSON SERVER
 
-A Seleção do sistema de banco de dados deu-se pela sugestão `Hilab`
+A seleção do sistema de banco de dados deu-se pela sugestão `Hilab`
